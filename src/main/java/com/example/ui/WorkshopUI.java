@@ -16,13 +16,27 @@ public class WorkshopUI extends UI {
 
     @Override
     protected void init(VaadinRequest vaadinRequest) {
+        TabSheet tabs = new TabSheet();
+        tabs.addTab(buildGreetingComponent(), "Greeting");
+        tabs.addTab(buildAdminComponent(), "Admin");
+        setContent(tabs);
+    }
+
+    private Component buildGreetingComponent() {
         TextField textField = new TextField("Name");
 
         Button button = new Button("Greet");
-        button.addClickListener(e -> Notification.show(greetingService.greet(textField.getValue())));
+        button.addClickListener(e -> greet(textField.getValue()));
 
-        VerticalLayout layout = new VerticalLayout(textField, button);
-        setContent(layout);
+        return new VerticalLayout(textField, button);
+    }
+
+    private void greet(String name) {
+        Notification.show(greetingService.greet(name));
+    }
+
+    private Component buildAdminComponent() {
+        return new Label("TODO");
     }
 
 }
