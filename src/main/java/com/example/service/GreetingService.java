@@ -5,6 +5,8 @@ import com.example.repository.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Collection;
+
 @Service
 public class GreetingService {
 
@@ -29,4 +31,7 @@ public class GreetingService {
 
     }
 
+    public Collection<Customer> findAllCustomers() {
+        return customerRepository.findAll();
+    }
 }
