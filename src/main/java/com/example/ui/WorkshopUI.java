@@ -1,5 +1,6 @@
-package com.example;
+package com.example.ui;
 
+import com.example.service.GreetingService;
 import com.vaadin.annotations.Theme;
 import com.vaadin.server.VaadinRequest;
 import com.vaadin.spring.annotation.SpringUI;
