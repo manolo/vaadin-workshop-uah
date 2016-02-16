@@ -34,4 +34,9 @@ public class GreetingService {
     public Collection<Customer> findAllCustomers() {
         return customerRepository.findAll();
     }
+
+    public void saveCustomer(Customer customer) {
+        customerRepository.saveAndFlush(customer);
+    }
+
 }
