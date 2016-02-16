@@ -46,6 +46,7 @@ public class WorkshopUI extends UI implements FieldGroup.CommitHandler {
 
     private Component buildAdminComponent() {
         Grid grid = new Grid(container);
+        grid.setColumnOrder("id", "name", "address", "phone", "email");
         grid.setEditorEnabled(true);
         grid.getColumn("id").setEditable(false);
         grid.getEditorFieldGroup().addCommitHandler(this);
